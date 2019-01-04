@@ -4,15 +4,15 @@
 #
 Name     : libfprint
 Version  : 0.7.0
-Release  : 1
-URL      : http://freedesktop.org/~anarsoul/libfprint-0.7.0.tar.xz
-Source0  : http://freedesktop.org/~anarsoul/libfprint-0.7.0.tar.xz
+Release  : 2
+URL      : https://gitlab.freedesktop.org/libfprint/libfprint/uploads/126f15e42c849b805d7a317e8a97aa82/libfprint-0.7.0.tar.xz
+Source0  : https://gitlab.freedesktop.org/libfprint/libfprint/uploads/126f15e42c849b805d7a317e8a97aa82/libfprint-0.7.0.tar.xz
 Summary  : Generic C API for fingerprint reader access
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: libfprint-lib
-Requires: libfprint-license
-Requires: libfprint-config
+Requires: libfprint-config = %{version}-%{release}
+Requires: libfprint-lib = %{version}-%{release}
+Requires: libfprint-license = %{version}-%{release}
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(libusb-1.0)
 BuildRequires : pkgconfig(nss)
@@ -36,8 +36,8 @@ config components for the libfprint package.
 %package dev
 Summary: dev components for the libfprint package.
 Group: Development
-Requires: libfprint-lib
-Provides: libfprint-devel
+Requires: libfprint-lib = %{version}-%{release}
+Provides: libfprint-devel = %{version}-%{release}
 
 %description dev
 dev components for the libfprint package.
@@ -46,7 +46,7 @@ dev components for the libfprint package.
 %package lib
 Summary: lib components for the libfprint package.
 Group: Libraries
-Requires: libfprint-license
+Requires: libfprint-license = %{version}-%{release}
 
 %description lib
 lib components for the libfprint package.
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536494239
+export SOURCE_DATE_EPOCH=1546633643
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -80,10 +80,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1536494239
+export SOURCE_DATE_EPOCH=1546633643
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/libfprint
-cp COPYING %{buildroot}/usr/share/doc/libfprint/COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/libfprint
+cp COPYING %{buildroot}/usr/share/package-licenses/libfprint/COPYING
 %make_install
 
 %files
@@ -105,5 +105,5 @@ cp COPYING %{buildroot}/usr/share/doc/libfprint/COPYING
 /usr/lib64/libfprint.so.0.0.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/libfprint/COPYING
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/libfprint/COPYING
