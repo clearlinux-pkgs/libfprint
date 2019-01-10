@@ -1,2 +1,8 @@
 # This file contains additional pkgconfig build requirements that did
 # not get picked up automatically. One name per line, no whitespace.
+glib-2.0
+gtk+-3.0
+libudev
+libusb-1.0
+pixman-1
+xv

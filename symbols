@@ -26,10 +26,12 @@ libfprint.so.0:fp_driver_get_driver_id
 libfprint.so.0:fp_driver_get_full_name
 libfprint.so.0:fp_driver_get_name
 libfprint.so.0:fp_driver_get_scan_type
+libfprint.so.0:fp_driver_supports_imaging
 libfprint.so.0:fp_dscv_dev_for_dscv_print
 libfprint.so.0:fp_dscv_dev_for_print_data
 libfprint.so.0:fp_dscv_dev_get_devtype
 libfprint.so.0:fp_dscv_dev_get_driver
+libfprint.so.0:fp_dscv_dev_get_driver_id
 libfprint.so.0:fp_dscv_dev_supports_dscv_print
 libfprint.so.0:fp_dscv_dev_supports_print_data
 libfprint.so.0:fp_dscv_devs_free
@@ -38,12 +40,14 @@ libfprint.so.0:fp_dscv_print_get_devtype
 libfprint.so.0:fp_dscv_print_get_driver_id
 libfprint.so.0:fp_dscv_print_get_finger
 libfprint.so.0:fp_dscv_prints_free
+libfprint.so.0:fp_enroll_finger
 libfprint.so.0:fp_enroll_finger_img
 libfprint.so.0:fp_exit
 libfprint.so.0:fp_get_next_timeout
 libfprint.so.0:fp_get_pollfds
 libfprint.so.0:fp_handle_events
 libfprint.so.0:fp_handle_events_timeout
+libfprint.so.0:fp_identify_finger
 libfprint.so.0:fp_identify_finger_img
 libfprint.so.0:fp_img_binarize
 libfprint.so.0:fp_img_free
@@ -54,6 +58,7 @@ libfprint.so.0:fp_img_get_width
 libfprint.so.0:fp_img_save_to_file
 libfprint.so.0:fp_img_standardize
 libfprint.so.0:fp_init
+libfprint.so.0:fp_minutia_get_coords
 libfprint.so.0:fp_print_data_delete
 libfprint.so.0:fp_print_data_free
 libfprint.so.0:fp_print_data_from_data
@@ -65,5 +70,6 @@ libfprint.so.0:fp_print_data_load
 libfprint.so.0:fp_print_data_save
 libfprint.so.0:fp_set_debug
 libfprint.so.0:fp_set_pollfd_notifiers
+libfprint.so.0:fp_verify_finger
 libfprint.so.0:fp_verify_finger_img
 libfprint.so.0:fprint_get_drivers

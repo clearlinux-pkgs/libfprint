@@ -1,5 +1,5 @@
 PKG_NAME := libfprint
-URL = https://gitlab.freedesktop.org/libfprint/libfprint/uploads/126f15e42c849b805d7a317e8a97aa82/libfprint-0.7.0.tar.xz
+URL = https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/V_0_99_0/libfprint-V_0_99_0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
