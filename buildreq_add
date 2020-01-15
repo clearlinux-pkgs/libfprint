@@ -4,3 +4,4 @@ cmake
 gtk-doc
 libxslt
 nss-dev
+gobject-introspection

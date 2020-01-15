@@ -1,3 +1,4 @@
-0.99.0
+1.90.0
 docbook-xml
-pkgconfig(udev)
+libgusb-dev
+pkgconfig(gusb)
