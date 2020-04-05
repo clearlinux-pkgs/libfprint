@@ -4,10 +4,10 @@
 #
 Name     : libfprint
 Version  : 1.90.1
-Release  : 5
+Release  : 6
 URL      : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.90.1/libfprint-v1.90.1.tar.gz
 Source0  : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.90.1/libfprint-v1.90.1.tar.gz
-Summary  : Library for fingerprint readers
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
 Requires: libfprint-config = %{version}-%{release}
@@ -17,9 +17,8 @@ Requires: libfprint-license = %{version}-%{release}
 BuildRequires : buildreq-meson
 BuildRequires : cmake
 BuildRequires : docbook-xml
-BuildRequires : gobject-introspection
+BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
-BuildRequires : libgusb-dev
 BuildRequires : libxslt
 BuildRequires : nss-dev
 BuildRequires : pkgconfig(glib-2.0)
@@ -59,7 +58,6 @@ Group: Development
 Requires: libfprint-lib = %{version}-%{release}
 Requires: libfprint-data = %{version}-%{release}
 Provides: libfprint-devel = %{version}-%{release}
-Requires: libfprint = %{version}-%{release}
 Requires: libfprint = %{version}-%{release}
 
 %description dev
@@ -101,12 +99,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581343877
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1586066210
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir
