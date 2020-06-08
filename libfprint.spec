@@ -4,7 +4,7 @@
 #
 Name     : libfprint
 Version  : 1.90.2
-Release  : 7
+Release  : 8
 URL      : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.90.2/libfprint-v1.90.2.tar.gz
 Source0  : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.90.2/libfprint-v1.90.2.tar.gz
 Summary  : No detailed summary available
@@ -100,7 +100,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591627483
+export SOURCE_DATE_EPOCH=1591633654
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
