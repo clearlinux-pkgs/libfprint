@@ -1,5 +1,4 @@
-1.90.2
+1.90.3
 docbook-xml
-libgusb-dev
 pkgconfig(gusb)
 valgrind
