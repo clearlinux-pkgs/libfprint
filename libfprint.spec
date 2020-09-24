@@ -4,7 +4,7 @@
 #
 Name     : libfprint
 Version  : 1.90.3
-Release  : 9
+Release  : 10
 URL      : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.90.3/libfprint-v1.90.3.tar.gz
 Source0  : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.90.3/libfprint-v1.90.3.tar.gz
 Summary  : No detailed summary available
