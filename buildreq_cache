@@ -1,0 +1,13 @@
+1.94.5
+cairo-dev
+docbook-xml
+glib-dev
+gtk-doc
+libgudev-dev
+pkgconfig(cairo)
+pkgconfig(glib-2.0)
+pkgconfig(gobject-introspection-1.0)
+pkgconfig(gudev-1.0)
+pkgconfig(gusb)
+pkgconfig(nss)
+valgrind
