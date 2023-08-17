@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : libfprint
-Version  : 1.94.5
-Release  : 1
-URL      : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.94.5/libfprint-v1.94.5.tar.gz
-Source0  : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.94.5/libfprint-v1.94.5.tar.gz
+Version  : 1.94.6
+Release  : 2
+URL      : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.94.6/libfprint-v1.94.6.tar.gz
+Source0  : https://gitlab.freedesktop.org/libfprint/libfprint/-/archive/v1.94.6/libfprint-v1.94.6.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -90,16 +90,25 @@ Group: Default
 license components for the libfprint package.
 
 
+%package tests
+Summary: tests components for the libfprint package.
+Group: Default
+Requires: libfprint = %{version}-%{release}
+
+%description tests
+tests components for the libfprint package.
+
+
 %prep
-%setup -q -n libfprint-v1.94.5
-cd %{_builddir}/libfprint-v1.94.5
+%setup -q -n libfprint-v1.94.6
+cd %{_builddir}/libfprint-v1.94.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1687444858
+export SOURCE_DATE_EPOCH=1692314810
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -196,3 +205,103 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/libfprint/caeb68c46fa36651acf592771d09de7937926bb3
+
+%files tests
+%defattr(-,root,root,-)
+/usr/libexec/installed-tests/libfprint-2/capture.py
+/usr/libexec/installed-tests/libfprint-2/test-fpi-assembling
+/usr/libexec/installed-tests/libfprint-2/test-fpi-device
+/usr/libexec/installed-tests/libfprint-2/test-fpi-ssm
+/usr/libexec/installed-tests/libfprint-2/umockdev-test.py
+/usr/share/installed-tests/libfprint-2/aes2501/capture.pcapng
+/usr/share/installed-tests/libfprint-2/aes2501/capture.png
+/usr/share/installed-tests/libfprint-2/aes2501/device
+/usr/share/installed-tests/libfprint-2/aes3500/capture.ioctl
+/usr/share/installed-tests/libfprint-2/aes3500/capture.png
+/usr/share/installed-tests/libfprint-2/aes3500/device
+/usr/share/installed-tests/libfprint-2/driver-aes2501.test
+/usr/share/installed-tests/libfprint-2/driver-aes3500.test
+/usr/share/installed-tests/libfprint-2/driver-egis0570.test
+/usr/share/installed-tests/libfprint-2/driver-elan-cobo.test
+/usr/share/installed-tests/libfprint-2/driver-elan.test
+/usr/share/installed-tests/libfprint-2/driver-elanmoc.test
+/usr/share/installed-tests/libfprint-2/driver-elanspi.test
+/usr/share/installed-tests/libfprint-2/driver-fpcmoc.test
+/usr/share/installed-tests/libfprint-2/driver-goodixmoc.test
+/usr/share/installed-tests/libfprint-2/driver-nb1010.test
+/usr/share/installed-tests/libfprint-2/driver-synaptics.test
+/usr/share/installed-tests/libfprint-2/driver-upektc_img-tcs1s.test
+/usr/share/installed-tests/libfprint-2/driver-upektc_img.test
+/usr/share/installed-tests/libfprint-2/driver-uru4000-4500.test
+/usr/share/installed-tests/libfprint-2/driver-uru4000-msv2.test
+/usr/share/installed-tests/libfprint-2/driver-vfs0050.test
+/usr/share/installed-tests/libfprint-2/driver-vfs301.test
+/usr/share/installed-tests/libfprint-2/driver-vfs5011.test
+/usr/share/installed-tests/libfprint-2/driver-vfs7552.test
+/usr/share/installed-tests/libfprint-2/egis0570/capture.pcapng
+/usr/share/installed-tests/libfprint-2/egis0570/capture.png
+/usr/share/installed-tests/libfprint-2/egis0570/device
+/usr/share/installed-tests/libfprint-2/elan-cobo/capture.pcapng
+/usr/share/installed-tests/libfprint-2/elan-cobo/capture.png
+/usr/share/installed-tests/libfprint-2/elan-cobo/device
+/usr/share/installed-tests/libfprint-2/elan/capture.ioctl
+/usr/share/installed-tests/libfprint-2/elan/capture.ioctl-recording
+/usr/share/installed-tests/libfprint-2/elan/capture.png
+/usr/share/installed-tests/libfprint-2/elan/device
+/usr/share/installed-tests/libfprint-2/elanmoc/custom.pcapng
+/usr/share/installed-tests/libfprint-2/elanmoc/custom.py
+/usr/share/installed-tests/libfprint-2/elanmoc/device
+/usr/share/installed-tests/libfprint-2/elanspi/capture.ioctl
+/usr/share/installed-tests/libfprint-2/elanspi/capture.png
+/usr/share/installed-tests/libfprint-2/elanspi/device-hidraw
+/usr/share/installed-tests/libfprint-2/elanspi/device-spi
+/usr/share/installed-tests/libfprint-2/fpcmoc/custom.pcapng
+/usr/share/installed-tests/libfprint-2/fpcmoc/custom.py
+/usr/share/installed-tests/libfprint-2/fpcmoc/device
+/usr/share/installed-tests/libfprint-2/fpi-assembling.test
+/usr/share/installed-tests/libfprint-2/fpi-device.test
+/usr/share/installed-tests/libfprint-2/fpi-ssm.test
+/usr/share/installed-tests/libfprint-2/goodixmoc/custom.pcapng
+/usr/share/installed-tests/libfprint-2/goodixmoc/custom.py
+/usr/share/installed-tests/libfprint-2/goodixmoc/device
+/usr/share/installed-tests/libfprint-2/nb1010/capture.ioctl
+/usr/share/installed-tests/libfprint-2/nb1010/capture.png
+/usr/share/installed-tests/libfprint-2/nb1010/device
+/usr/share/installed-tests/libfprint-2/prints/README
+/usr/share/installed-tests/libfprint-2/prints/arch.jpg
+/usr/share/installed-tests/libfprint-2/prints/arch.png
+/usr/share/installed-tests/libfprint-2/prints/loop-right.jpg
+/usr/share/installed-tests/libfprint-2/prints/loop-right.png
+/usr/share/installed-tests/libfprint-2/prints/tented_arch.jpg
+/usr/share/installed-tests/libfprint-2/prints/tented_arch.png
+/usr/share/installed-tests/libfprint-2/prints/whorl.jpg
+/usr/share/installed-tests/libfprint-2/prints/whorl.png
+/usr/share/installed-tests/libfprint-2/synaptics/custom.pcapng
+/usr/share/installed-tests/libfprint-2/synaptics/custom.py
+/usr/share/installed-tests/libfprint-2/synaptics/device
+/usr/share/installed-tests/libfprint-2/upektc_img-tcs1s/capture.pcapng
+/usr/share/installed-tests/libfprint-2/upektc_img-tcs1s/capture.png
+/usr/share/installed-tests/libfprint-2/upektc_img-tcs1s/device
+/usr/share/installed-tests/libfprint-2/upektc_img/capture.pcapng
+/usr/share/installed-tests/libfprint-2/upektc_img/capture.png
+/usr/share/installed-tests/libfprint-2/upektc_img/device
+/usr/share/installed-tests/libfprint-2/uru4000-4500/capture.pcapng
+/usr/share/installed-tests/libfprint-2/uru4000-4500/capture.png
+/usr/share/installed-tests/libfprint-2/uru4000-4500/device
+/usr/share/installed-tests/libfprint-2/uru4000-msv2/capture.pcapng
+/usr/share/installed-tests/libfprint-2/uru4000-msv2/capture.png
+/usr/share/installed-tests/libfprint-2/uru4000-msv2/device
+/usr/share/installed-tests/libfprint-2/vfs0050/capture-recorded.ioctl
+/usr/share/installed-tests/libfprint-2/vfs0050/capture.ioctl
+/usr/share/installed-tests/libfprint-2/vfs0050/capture.png
+/usr/share/installed-tests/libfprint-2/vfs0050/device
+/usr/share/installed-tests/libfprint-2/vfs301/capture-recorded.ioctl
+/usr/share/installed-tests/libfprint-2/vfs301/capture.ioctl
+/usr/share/installed-tests/libfprint-2/vfs301/capture.png
+/usr/share/installed-tests/libfprint-2/vfs301/device
+/usr/share/installed-tests/libfprint-2/vfs5011/capture.ioctl
+/usr/share/installed-tests/libfprint-2/vfs5011/capture.png
+/usr/share/installed-tests/libfprint-2/vfs5011/device
+/usr/share/installed-tests/libfprint-2/vfs7552/capture.ioctl
+/usr/share/installed-tests/libfprint-2/vfs7552/capture.png
+/usr/share/installed-tests/libfprint-2/vfs7552/device
